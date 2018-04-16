@@ -108,7 +108,7 @@ module Styles = {
     ]);
 };
 
-let make = _children => {
+let make = (~navigation: ReactNavigation.Navigation.t, _children) => {
   let handleClick = _e => Js.log("clicked");
   {
     ...component,

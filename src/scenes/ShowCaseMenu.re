@@ -33,7 +33,16 @@ let make = (~navigation: ReactNavigation.Navigation.t, _children) => {
               )>
         <Elements.Button
           buttonStyle=Styles.buttonStyle
-          title="Card Showcase"
+          title="Card Sowcase"
+          onPress=(
+            _e =>
+              ReactNavigation.Navigation.(
+                navigate(
+                  navigation,
+                  createNavigateParams(~routeName=Routes.ShowCase.card, ()),
+                )
+              )
+          )
         />
         <Elements.Button buttonStyle=Styles.buttonStyle title="Homepage" />
         <Elements.Button

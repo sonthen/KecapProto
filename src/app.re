@@ -23,6 +23,22 @@ module Nav = {
                   (),
                 ),
               ),
+              (
+                Routes.login,
+                RouteConfig.route(
+                  ~screen=props => <Login navigation=props##navigation />,
+                  ~path="/login",
+                  (),
+                ),
+              ),
+              (
+                Routes.ShowCase.card,
+                RouteConfig.route(
+                  ~screen=props => <Card navigation=props##navigation />,
+                  ~path="/card",
+                  (),
+                ),
+              ),
             ])
           )
           config=(

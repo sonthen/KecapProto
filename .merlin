@@ -17,6 +17,8 @@ S src
 B lib/bs/src
 S src/scenes
 B lib/bs/src/scenes
+S src/scenes/ShowCases
+B lib/bs/src/scenes/ShowCases
 S src/scenes/Login
 B lib/bs/src/scenes/Login
 S src/scenes/Home
