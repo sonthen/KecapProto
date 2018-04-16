@@ -34,8 +34,8 @@ module Nav = {
               (
                 Routes.ShowCase.card,
                 RouteConfig.route(
-                  ~screen=props => <Card navigation=props##navigation />,
-                  ~path="/card",
+                  ~screen=_props => <CardShowCase />,
+                  ~path="/cardshowcase",
                   (),
                 ),
               ),

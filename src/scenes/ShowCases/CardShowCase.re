@@ -1,8 +1,8 @@
 open BsReactNative;
 
-let component = ReasonReact.statelessComponent("Card");
+let component = ReasonReact.statelessComponent("CardShowCase");
 
-let make = (~navigation: ReactNavigation.Navigation.t, _children) => {
+let make = _children => {
   ...component,
   render: _self =>
     <ScrollView horizontal=true>
