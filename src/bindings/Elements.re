@@ -73,13 +73,22 @@ module Header = {
 
 module Input = {
   [@bs.module "react-native-elements"]
-  external className : ReasonReact.reactClass = "";
-  let make = (~placeholder: option(string)=?, children) =>
+  external className : ReasonReact.reactClass = "Input";
+  [@bs.obj]
+  external makeProps : (~placeholder: Js.Nullable.t(string)=?, unit) => _ =
+    "";
+  let make = (~placeholder=?, children) =>
     ReasonReact.wrapJsForReason(
       ~reactClass=className,
-      ~props=Js.Nullable.({"placeholder": fromOption(placeholder)}),
+      ~props=makeProps(~placeholder=Js.Nullable.fromOption(placeholder), ()),
       children,
     );
+  /* let make = (~placeholder=? , children) =>
+     ReasonReact.wrapJsForReason(
+       ~reactClass=className,
+       ~props=makeProps(~placeholder=Js.Nullable.t(placeholder), ())
+       children,
+     ); */
   /* ~containerStyle: option(BsReactNative.Style.t)=?,
      ~inputContainerStyle: option(BsReactNative.Style.t)=?,
      ~errorMessage: option(string)=?,
@@ -107,7 +116,6 @@ module Input = {
 module Badge = {
   [@bs.module "react-native-elements"]
   external className : ReasonReact.reactClass = "Badge";
-  /* type stringOrInt = [| `String(string) | Number(int) ]; */
   /* type of the value could either be string or integer */
   type value =
     | String(string)
@@ -122,11 +130,12 @@ module Badge = {
     | None => ""
     | Some(v) => valueChecker(v)
     };
+  [@bs.obj] external makeProps : (~value: string=?, unit) => _ = "";
   /* end checks for value ! */
-  let make = (~value: option(value)=?, children) =>
+  let make = (~value=?, children) =>
     ReasonReact.wrapJsForReason(
       ~reactClass=className,
-      ~props=Js.Nullable.({"value": unwrapValue(value)}),
+      ~props=makeProps(~value=unwrapValue(value), ()),
       children,
     );
 };

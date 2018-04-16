@@ -16,7 +16,7 @@ module Styles = {
 
 let component = ReasonReact.statelessComponent("ShowCase");
 
-let make = _children => {
+let make = (~navigation: ReactNavigation.Navigation.t, _children) => {
   ...component,
   render: _self =>
     <View style=Style.(style([flex @@ 1., backgroundColor @@ "#2f2f2f"]))>

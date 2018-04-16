@@ -19,6 +19,8 @@ S src/scenes
 B lib/bs/src/scenes
 S src/scenes/Login
 B lib/bs/src/scenes/Login
+S src/scenes/Home
+B lib/bs/src/scenes/Home
 S src/general
 B lib/bs/src/general
 S src/general/styles
