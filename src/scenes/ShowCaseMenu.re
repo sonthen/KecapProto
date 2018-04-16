@@ -34,7 +34,7 @@ let make = (~navigation: ReactNavigation.Navigation.t, _children) => {
           buttonStyle=Styles.buttonStyle
           title="Card Sowcase"
           onPress=(
-            _e =>
+            () =>
               ReactNavigation.Navigation.(
                 navigate(
                   navigation,
