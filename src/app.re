@@ -52,7 +52,7 @@ module Nav = {
           config=(
             StackNavigatorConfig.create(
               ~initialRouteName=Routes.showCaseMenu,
-              ~headerMode=HeaderMode.None,
+              ~headerMode=HeaderMode.Float,
               (),
             )
           )
