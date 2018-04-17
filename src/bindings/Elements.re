@@ -71,6 +71,35 @@ module Header = {
     );
 };
 
+module Avatar = {
+  [@bs.module "react-native-elements"]
+  external className : ReasonReact.reactClass = "Card";
+  [@bs.obj]
+  external makeProps :
+    (
+      ~activeOpacity: Js.Nullable.t(int)=?,
+      ~avatarStyle: Js.Nullable.t(BsReactNative.Style.t)=?,
+      ~containerStyle: Js.Nullable.t(BsReactNative.Style.t)=?,
+      ~rounded: bool=?,
+      unit
+    ) =>
+    _ =
+    "";
+  let make = (~activeOpacity=?, ~avatarStyle=?, ~containerStyle=?, children) =>
+    ReasonReact.wrapJsForReason(
+      ~reactClass=className,
+      ~props=
+        makeProps(
+          ~activeOpacity=Js.Nullable.fromOption(activeOpacity),
+          ~avatarStyle=Js.Nullable.fromOption(avatarStyle),
+          ~containerStyle=Js.Nullable.fromOption(containerStyle),
+          ~rounded=true,
+          (),
+        ),
+      children,
+    );
+};
+
 module Input = {
   [@bs.module "react-native-elements"]
   external className : ReasonReact.reactClass = "Input";

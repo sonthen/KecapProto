@@ -12,8 +12,4 @@ let centerAligned = style([alignItems(Center)]);
 
 let centerJustified = style([justifyContent(Center)]);
 
-let container =
-  flatten([|
-    flex1,
-    style([justifyContent @@ Center, alignItems @@ Center]),
-  |]);
+let container = flatten([|flex1, centerAligned, centerJustified|]);

@@ -43,7 +43,20 @@ let make = (~navigation: ReactNavigation.Navigation.t, _children) => {
               )
           )
         />
-        <Elements.Button buttonStyle=Styles.buttonStyle title="Homepage" />
+        <Elements.Button
+          buttonStyle=Styles.buttonStyle
+          title="Avatar Showcase"
+          onPress=(
+            () =>
+              ReactNavigation.Navigation.(
+                navigate(
+                  navigation,
+                  createNavigateParams(~routeName=Routes.ShowCase.avatar, ()),
+                )
+              )
+          )
+        />
+        <Elements.Button buttonStyle=Styles.buttonStyle title="Home" />
         <Elements.Button
           buttonStyle=Styles.buttonStyle
           title="Button Showcase"

@@ -39,6 +39,14 @@ module Nav = {
                   (),
                 ),
               ),
+              (
+                Routes.ShowCase.avatar,
+                RouteConfig.route(
+                  ~screen=_props => <AvatarShowCase />,
+                  ~path="/avatarshowcase",
+                  (),
+                ),
+              ),
             ])
           )
           config=(
