@@ -80,12 +80,19 @@ module Avatar = {
       ~activeOpacity: Js.Nullable.t(int)=?,
       ~avatarStyle: Js.Nullable.t(BsReactNative.Style.t)=?,
       ~containerStyle: Js.Nullable.t(BsReactNative.Style.t)=?,
-      ~rounded: bool=?,
+      ~rounded: Js.Nullable.t(bool)=?,
       unit
     ) =>
     _ =
     "";
-  let make = (~activeOpacity=?, ~avatarStyle=?, ~containerStyle=?, children) =>
+  let make =
+      (
+        ~activeOpacity=?,
+        ~avatarStyle=?,
+        ~containerStyle=?,
+        ~rounded=?,
+        children,
+      ) =>
     ReasonReact.wrapJsForReason(
       ~reactClass=className,
       ~props=
@@ -93,7 +100,7 @@ module Avatar = {
           ~activeOpacity=Js.Nullable.fromOption(activeOpacity),
           ~avatarStyle=Js.Nullable.fromOption(avatarStyle),
           ~containerStyle=Js.Nullable.fromOption(containerStyle),
-          ~rounded=true,
+          ~rounded=Js.Nullable.fromOption(rounded),
           (),
         ),
       children,

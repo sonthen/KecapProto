@@ -6,8 +6,8 @@ let make = _children => {
   ...component,
   render: _self =>
     <View style=Style.(style([flex @@ 1.]))>
-      <View style=Style.(style([flex @@ 3.]))>
-        <Text style=Style.(style([fontSize @@ Float(20.)]))>
+      <View style=Style.(style([flex @@ 3., alignItems @@ Center]))>
+        <Text style=Style.(style([fontSize @@ Float(40.)]))>
           ("What Do You Want To Learn Today ?" |> ReasonReact.stringToElement)
         </Text>
       </View>
